@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kdu-Lx-R2t">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Pikachu Mania-->
+        <scene sceneID="CtS-rA-C9T">
+            <objects>
+                <viewController id="LVB-YS-i5n" customClass="GameViewController" customModule="AlexSKGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PCf-gQ-wO7"/>
+                        <viewControllerLayoutGuide type="bottom" id="b3d-qh-BLL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bdc-N1-crn" customClass="SKView">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Pikachu Mania" id="gkK-Ym-xhC">
+                        <barButtonItem key="leftBarButtonItem" image="home.png" id="Yv4-sz-UjP">
+                            <connections>
+                                <segue destination="kdu-Lx-R2t" kind="presentation" identifier="returnHome" id="NSp-Z2-EHE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="wfX-iQ-VUe" kind="presentation" identifier="endGame" id="mTL-oL-af1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="btX-cZ-eVz" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="980.5" y="306.5"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="8hL-0D-pqt">
+            <objects>
+                <viewController id="kdu-Lx-R2t" customClass="MainViewController" customModule="AlexSKGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TQH-39-QKP"/>
+                        <viewControllerLayoutGuide type="bottom" id="DVC-Y9-jeb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9vE-Qu-RFg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cgL-kh-hDU">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Ec3-ob-VvT"/>
+                                    <barButtonItem title="High Scores" id="c3e-3L-RRo">
+                                        <connections>
+                                            <segue destination="LDb-ok-i5t" kind="presentation" id="MAc-Ds-lHM"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="hap-Bw-E6k"/>
+                                    <barButtonItem title="How-to-Play" id="167-M7-Ggk">
+                                        <connections>
+                                            <action selector="howToPlay:" destination="kdu-Lx-R2t" id="tXp-LY-SWU"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="oRw-T3-Lzt"/>
+                                </items>
+                            </toolbar>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UbD-KX-T7W">
+                                <rect key="frame" x="123" y="544" width="129" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Start Game">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="UaA-Oc-zoY" kind="show" id="RdH-HS-YOW"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mania.png" translatesAutoresizingMaskIntoConstraints="NO" id="nRV-1R-TPR">
+                                <rect key="frame" x="61" y="48" width="252" height="252"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="252" id="IeX-rj-XHw"/>
+                                    <constraint firstAttribute="height" constant="252" id="eHJ-q4-0TT"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coverPika.png" translatesAutoresizingMaskIntoConstraints="NO" id="Arf-0P-D67">
+                                <rect key="frame" x="115" y="165" width="144" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="144" id="0vH-Gg-ZyI"/>
+                                    <constraint firstAttribute="height" constant="240" id="7Ui-iX-LF9"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cgL-kh-hDU" firstAttribute="leading" secondItem="9vE-Qu-RFg" secondAttribute="leadingMargin" constant="-16" id="AhJ-b8-EQL"/>
+                            <constraint firstAttribute="centerX" secondItem="nRV-1R-TPR" secondAttribute="centerX" id="BJl-w2-L63"/>
+                            <constraint firstItem="cgL-kh-hDU" firstAttribute="top" secondItem="UbD-KX-T7W" secondAttribute="bottom" constant="49" id="Nl4-iy-32E"/>
+                            <constraint firstAttribute="centerX" secondItem="cgL-kh-hDU" secondAttribute="centerX" id="ZJr-Ik-Uhr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cgL-kh-hDU" secondAttribute="trailing" constant="-16" id="ZZM-gc-PjQ"/>
+                            <constraint firstAttribute="centerX" secondItem="Arf-0P-D67" secondAttribute="centerX" id="gbB-Rd-pDj"/>
+                            <constraint firstItem="DVC-Y9-jeb" firstAttribute="top" secondItem="cgL-kh-hDU" secondAttribute="bottom" id="itm-xL-Lce"/>
+                            <constraint firstAttribute="centerX" secondItem="UbD-KX-T7W" secondAttribute="centerX" id="olx-yG-ztk"/>
+                            <constraint firstItem="Arf-0P-D67" firstAttribute="top" secondItem="TQH-39-QKP" secondAttribute="bottom" constant="145" id="rhq-04-6KL"/>
+                            <constraint firstItem="nRV-1R-TPR" firstAttribute="top" secondItem="TQH-39-QKP" secondAttribute="bottom" constant="28" id="wyJ-bJ-PsP"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hXB-Ky-17m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-534.5" y="300.5"/>
+        </scene>
+        <!--High Scores-->
+        <scene sceneID="cDH-CM-d4x">
+            <objects>
+                <tableViewController id="qbU-Zc-Vjc" customClass="HighScoresTableViewController" customModule="AlexSKGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="107" sectionHeaderHeight="22" sectionFooterHeight="22" id="aQG-w6-5EQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="hsCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="hsCell" rowHeight="107" id="cDb-r0-CtB" customClass="HighScoresTableViewCell" customModule="AlexSKGame" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cDb-r0-CtB" id="Gpd-hQ-Dr6">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pikachuKing.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="sSV-I3-WNl">
+                                            <rect key="frame" x="8" y="16" width="74" height="74"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q4h-bN-NOb">
+                                            <rect key="frame" x="90" y="22" width="267" height="41"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RYF-hu-y9U">
+                                            <rect key="frame" x="90" y="64" width="50" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b5j-UO-Zhy">
+                                            <rect key="frame" x="152" y="64" width="72" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="hsName" destination="q4h-bN-NOb" id="2IW-1u-IId"/>
+                                    <outlet property="hsScore" destination="b5j-UO-Zhy" id="hPd-sv-lSv"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="qbU-Zc-Vjc" id="XXx-od-Rbq"/>
+                            <outlet property="delegate" destination="qbU-Zc-Vjc" id="89x-Nx-7w1"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="High Scores" id="yhr-c9-xnb">
+                        <barButtonItem key="leftBarButtonItem" image="home.png" id="kHp-8G-SnK">
+                            <connections>
+                                <segue destination="kdu-Lx-R2t" kind="presentation" identifier="returnHome" id="3UA-rQ-35c"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fEv-vg-hAU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="297.5" y="1154.5"/>
+        </scene>
+        <!--Game Over-->
+        <scene sceneID="4UF-iH-Nxq">
+            <objects>
+                <viewController id="9XL-wd-mPN" customClass="GameOverViewController" customModule="AlexSKGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8UD-WM-LdC"/>
+                        <viewControllerLayoutGuide type="bottom" id="S2u-9j-rg8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xMz-Jr-mLm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Score: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NI6-5E-lIf">
+                                <rect key="frame" x="102" y="135" width="170" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="M5x-JN-r3k"/>
+                                    <constraint firstAttribute="width" constant="170" id="xup-0a-hJY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="XX" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmF-JO-fre">
+                                <rect key="frame" x="88" y="169" width="199" height="160"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cDW-PQ-xxo">
+                                <rect key="frame" x="82" y="347" width="210" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="210" id="KhX-e8-buM"/>
+                                    <constraint firstAttribute="height" constant="30" id="mf6-w6-rK0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hxi-ul-9oq">
+                                <rect key="frame" x="80" y="398" width="214" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Submit to Scoreboard">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitToScoreboard:" destination="9XL-wd-mPN" eventType="touchUpInside" id="u5y-uT-Eof"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cDW-PQ-xxo" firstAttribute="top" secondItem="hmF-JO-fre" secondAttribute="bottom" constant="18" id="8eZ-2H-2C1"/>
+                            <constraint firstAttribute="centerX" secondItem="hmF-JO-fre" secondAttribute="centerX" id="GGt-dw-gYe"/>
+                            <constraint firstAttribute="centerX" secondItem="hxi-ul-9oq" secondAttribute="centerX" id="MgL-7D-dvz"/>
+                            <constraint firstAttribute="centerX" secondItem="NI6-5E-lIf" secondAttribute="centerX" id="cYf-A1-J2A"/>
+                            <constraint firstItem="hmF-JO-fre" firstAttribute="top" secondItem="NI6-5E-lIf" secondAttribute="bottom" constant="13" id="eZz-R1-iRf"/>
+                            <constraint firstItem="hxi-ul-9oq" firstAttribute="top" secondItem="cDW-PQ-xxo" secondAttribute="bottom" constant="21" id="hZR-b1-j5h"/>
+                            <constraint firstItem="NI6-5E-lIf" firstAttribute="top" secondItem="8UD-WM-LdC" secondAttribute="bottom" constant="71" id="qsR-OR-B1d"/>
+                            <constraint firstItem="S2u-9j-rg8" firstAttribute="top" secondItem="hxi-ul-9oq" secondAttribute="bottom" constant="239" id="rZX-z7-j7D"/>
+                            <constraint firstAttribute="centerX" secondItem="cDW-PQ-xxo" secondAttribute="centerX" id="wGM-o6-nZr"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="8eZ-2H-2C1"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="Game Over" id="4Zk-We-cLf">
+                        <barButtonItem key="leftBarButtonItem" image="home.png" id="a9Y-LL-jCF">
+                            <connections>
+                                <segue destination="kdu-Lx-R2t" kind="presentation" id="Tqk-sK-au4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="nameField" destination="cDW-PQ-xxo" id="AdW-fz-WOG"/>
+                        <outlet property="scorePoints" destination="hmF-JO-fre" id="Vkx-UH-4IB"/>
+                        <outlet property="scoreboardButton" destination="hxi-ul-9oq" id="bSO-VU-tJS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rcD-xD-pza" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2151.5" y="300.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Nao-Vz-dfk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UaA-Oc-zoY" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fvr-jT-pHZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="LVB-YS-i5n" kind="relationship" relationship="rootViewController" id="iMa-wS-bmZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bcr-aw-zq7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="281.5" y="306.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2cb-3u-4fy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wfX-iQ-VUe" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BDj-ga-Jdv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9XL-wd-mPN" kind="relationship" relationship="rootViewController" id="U00-IW-Wi4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="btW-RI-iyj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1612.5" y="300.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fbv-Fo-g4u">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LDb-ok-i5t" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8sl-HM-e03">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qbU-Zc-Vjc" kind="relationship" relationship="rootViewController" id="V5L-5J-f2l"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L7j-cx-53u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-515.5" y="1153.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="coverPika.png" width="450" height="645"/>
+        <image name="home.png" width="25" height="25"/>
+        <image name="mania.png" width="404" height="404"/>
+        <image name="pikachuKing.jpg" width="467" height="452"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="3UA-rQ-35c"/>
+    </inferredMetricsTieBreakers>
+</document>
